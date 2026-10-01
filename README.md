@@ -1,125 +1,99 @@
-# AI6127 Deep Learning for NLP Assignments
+# AI6127 自然语言处理深度学习课程作业
 
-This repository collects three course projects covering sentiment classification, neural machine translation, and multilingual dialogue generation. The implementations are primarily Jupyter notebooks, with a separate Python training and inference pipeline for the multilingual conversation task.
+本仓库集合了三个课程项目，分别涉及情感分类、神经机器翻译和多语言对话生成。项目主要以 Jupyter Notebook 实现；多语言对话项目还包含独立的 Python 训练和推理流程。
 
-> This README documents the repository as it currently exists. The notebooks and model scripts may depend on the original course data, pretrained checkpoints, GPU setup, and package versions. See [GitHub publishing notes](#publishing-this-project-on-github) before making the repository public.
+> 本文档根据仓库当前文件整理。运行代码可能需要课程原始数据、预训练模型、GPU 环境及兼容的依赖版本。将仓库公开到 GitHub 前，请先阅读[GitHub 发布前检查](#github-发布前检查)。
 
-## Projects
+## 项目一览
 
-| Project | Task | Main implementation |
+| 项目 | 任务 | 主要实现 |
 |---|---|---|
-| [Sentiment Analysis](Sentiment%20Analysis/) | Binary movie-review sentiment classification with multiple neural architectures and training comparisons. | `Sentiment Analysis/Multi-Model Sentiment Analysis.ipynb` |
-| [Machine translation](Machine%20translation/) | English-to-French sequence-to-sequence translation experiments, including model/task variations and saved training checkpoints. | `Machine translation/Multi-Model Mechine Translation.ipynb`; an additional notebook is in `Machine translation/autodl/`. |
-| [Multilingual conversation](Multilingual%20conversation/) | Dialogue response generation across monolingual, cross-lingual, and multilingual settings, using fine-tuned encoder-decoder models. | `Multilingual conversation/finetune_notationed.py` and supporting preprocessing/inference scripts; see its [project guide](Multilingual%20conversation/README.md). |
+| [Sentiment Analysis](Sentiment%20Analysis/) | 对影评进行二分类情感预测，并比较多种神经网络结构和训练配置。 | `Sentiment Analysis/Multi-Model Sentiment Analysis.ipynb` |
+| [Machine translation](Machine%20translation/) | 英语到法语的序列到序列机器翻译实验，包含不同模型/任务设置及训练检查点。 | `Machine translation/Multi-Model Mechine Translation.ipynb`；另有一个 notebook 位于 `Machine translation/autodl/`。 |
+| [Multilingual conversation](Multilingual%20conversation/) | 在单语言、跨语言和多语言设置下生成对话回复，使用微调后的编码器—解码器模型。 | `Multilingual conversation/finetune_notationed.py` 及配套预处理、推理脚本；详见该项目的[使用说明](Multilingual%20conversation/README.md)。 |
 
-## Repository layout
+## 仓库目录
 
 ```text
 AI6127-DL-NLP-Assignment/
 ├── Sentiment Analysis/
-│   ├── Multi-Model Sentiment Analysis.ipynb
-│   ├── REPORT/                         # Assignment report and figures
-│   ├── tut1-model*.pt                  # Trained PyTorch model weights
-│   └── *.png, TEST_RES.xlsx            # Experiment outputs
+│   ├── Multi-Model Sentiment Analysis.ipynb  # 多模型情感分类实验
+│   ├── REPORT/                               # 课程报告、图表和 LaTeX 源文件
+│   ├── tut1-model*.pt                        # 已训练的 PyTorch 模型权重
+│   └── *.png、TEST_RES.xlsx                  # 实验结果
 ├── Machine translation/
-│   ├── Multi-Model Mechine Translation.ipynb
-│   ├── autodl/                         # Additional notebook and source data/archive
-│   ├── data/                           # Translation corpus files
-│   ├── checkpoints/                    # Saved training checkpoints and curves
-│   └── REPORT/                         # Assignment report and figures
+│   ├── Multi-Model Mechine Translation.ipynb # 主翻译实验 notebook
+│   ├── autodl/                               # 另一份 notebook、数据和压缩包
+│   ├── data/                                 # 翻译语料
+│   ├── checkpoints/                          # 训练检查点和曲线
+│   └── REPORT/                               # 课程报告、图表和 LaTeX 源文件
 └── Multilingual conversation/
-    ├── parser_notationed.py            # Raw dialogue data → parallel .src/.tgt files
-    ├── preprocess_notationed.py        # Parallel files → JSONL datasets
-    ├── finetune_notationed.py          # Fine-tuning and evaluation pipeline
-    ├── inference.py                    # Single-checkpoint inference example
-    ├── batch_inference.py              # Compare sampled predictions across models
-    ├── loss_curves.py                  # Plot one training run's metrics
-    ├── loss_curve_comparation.py       # Compare training metrics across models
-    ├── data/                           # Prepared datasets, source files and human eval sets
-    ├── models/                         # Local pretrained model directories
-    ├── fine_tune_checkpoints/          # Training checkpoints
-    └── cache/                           # Dataset/cache files
+    ├── parser_notationed.py                  # 原始对话数据 → .src/.tgt 平行文件
+    ├── preprocess_notationed.py              # 平行文件 → JSONL 数据集
+    ├── finetune_notationed.py                # 模型微调和评估流程
+    ├── inference.py                          # 单模型推理示例
+    ├── batch_inference.py                    # 多模型预测样例对比
+    ├── loss_curves.py                        # 绘制单次训练指标
+    ├── loss_curve_comparation.py             # 多模型训练指标对比
+    ├── data/                                 # 处理后的数据、原始文件和人工评估集
+    ├── models/                               # 本地预训练模型目录
+    ├── fine_tune_checkpoints/                # 微调检查点
+    └── cache/                                # 数据集缓存文件
 ```
 
-## Requirements and environments
+## 环境和依赖
 
-The three projects do not share a single clean, portable dependency file:
+三个项目没有共用一份干净、可移植的依赖清单：
 
-- The sentiment and machine-translation notebooks use PyTorch and notebook-based workflows. The sentiment notebook also uses the legacy `torchtext` dataset/field API and spaCy English tokenization; compatible versions of PyTorch, torchtext, spaCy, and the `en_core_web_sm` model may be required.
-- The multilingual conversation pipeline uses PyTorch, Hugging Face Transformers/Datasets, Evaluate, SentencePiece, and plotting/metric packages. Its [`requirements.txt`](Multilingual%20conversation/requirements.txt) is a large snapshot of a personal Windows/Conda environment. It contains local build paths and unrelated packages, so it should not be installed as-is on another machine.
-- Training with CUDA requires a PyTorch build compatible with the target NVIDIA driver and CUDA runtime. CPU may work for smaller experiments, but fine-tuning large text-generation models is substantially slower.
+- **情感分类、机器翻译**：以 PyTorch 和 Jupyter Notebook 为主。情感分类 notebook 还使用旧版 `torchtext` 的数据集/Field API，以及 spaCy 英语分词；可能需要相互兼容的 PyTorch、torchtext、spaCy 和 `en_core_web_sm` 模型版本。
+- **多语言对话**：使用 PyTorch、Hugging Face Transformers/Datasets、Evaluate、SentencePiece，以及绘图和指标相关包。仓库中的 [`requirements.txt`](Multilingual%20conversation/requirements.txt) 是个人 Windows/Conda 环境的完整快照，包含本机路径和大量与本项目无关的包，不适合直接在其他机器上安装。
+- **GPU 训练**：需要与目标机器 NVIDIA 驱动及 CUDA 运行时兼容的 PyTorch 版本。较小实验可以尝试 CPU，但大型文本生成模型微调会慢很多。
 
-For reproducibility, create a separate environment for each project and install only the packages that its notebook or scripts import. Record Python, PyTorch, CUDA, Transformers, Datasets, and tokenizer/model versions after confirming the workflow on the target machine. Avoid installing the entire multilingual snapshot to run one notebook.
+建议为每个项目分别创建虚拟环境，只安装该项目 notebook 或脚本实际使用的依赖。在目标机器上确认运行成功后，记录 Python、PyTorch、CUDA、Transformers、Datasets 及分词器/模型版本。不要为了运行单个 notebook 安装整个多语言项目的环境快照。
 
-## Running the notebooks
+## 如何运行 Notebook
 
-From the repository root, start Jupyter:
+从仓库根目录启动 Jupyter：
 
 ```bash
 python -m pip install jupyter
 jupyter lab
 ```
 
-Open the notebook for the task you want to run. Some cells use paths relative to their project folder, so set the notebook working directory to that folder or update the data/checkpoint paths first. Run notebook cells in order. Training cells can take a long time and may use GPU memory; adjust batch size, sequence length, epochs, and model size to fit your hardware.
+打开对应项目的 notebook。部分单元格使用相对于项目目录的路径；运行前请将工作目录切换到对应目录，或修改数据和检查点路径。按顺序运行单元格。训练可能耗时较长并占用 GPU 显存，可根据硬件调整 batch size、序列长度、训练轮数和模型规模。
 
-### Sentiment analysis
+### 情感分类
 
-Open `Sentiment Analysis/Multi-Model Sentiment Analysis.ipynb`. The notebook loads the IMDB sentiment dataset through `torchtext`, builds a vocabulary, and compares MLP variants and sequence/CNN models (including LSTM and BiLSTM). The checked-in `.pt` files are trained weights; load them only with a model definition and preprocessing/vocabulary that match the original run.
+打开 `Sentiment Analysis/Multi-Model Sentiment Analysis.ipynb`。Notebook 通过 `torchtext` 加载 IMDB 情感数据集、构建词表，并比较 MLP 变体和序列/CNN 模型（包括 LSTM 和 BiLSTM）。仓库中已有的 `.pt` 文件是训练好的权重，加载时需要配套使用训练时相同的模型定义、文本预处理和词表。
 
-### Machine translation
+### 机器翻译
 
-Open `Machine translation/Multi-Model Mechine Translation.ipynb` for the main experiments. `Machine translation/autodl/Assignment2_ZY.ipynb` is an additional copy/workflow. The notebooks define tokenization, data preparation, sequence-to-sequence training, evaluation, and checkpoint/curve output. The `autodl/data/eng-fra.txt` file is a local English-French parallel corpus. Inspect notebook configuration cells before running so generated checkpoints and plots go to the intended locations.
+主实验 notebook 是 `Machine translation/Multi-Model Mechine Translation.ipynb`。`Machine translation/autodl/Assignment2_ZY.ipynb` 是另一份 notebook/实验流程。Notebook 包含文本处理、序列到序列训练、评估，以及检查点和曲线输出。`autodl/data/eng-fra.txt` 是本地英法平行语料。开始运行前，请先检查 notebook 中的数据路径和输出目录配置。
 
-### Multilingual conversation
+### 多语言对话
 
-The existing [multilingual conversation guide](Multilingual%20conversation/README.md) describes the full data and training workflow. In brief:
+完整数据和训练流程见[多语言对话项目说明](Multilingual%20conversation/README.md)。大致步骤如下：
 
-1. `parser_notationed.py` builds raw parallel `.src` and `.tgt` files from the dialogue corpus.
-2. `preprocess_notationed.py` tokenizes and converts the parallel files into JSONL records with `src` and `tgt` fields.
-3. Set model, dataset, training, and checkpoint options in `finetune_notationed.py`, then run it from the `Multilingual conversation/` directory:
+1. 运行 `parser_notationed.py`，从对话语料生成原始 `.src` 和 `.tgt` 平行文件。
+2. 运行 `preprocess_notationed.py`，将平行文件转换为包含 `src`、`tgt` 字段的 JSONL 数据。
+3. 在 `finetune_notationed.py` 中设置模型、数据集、训练参数和检查点路径，然后从 `Multilingual conversation/` 目录运行：
 
    ```bash
    cd "Multilingual conversation"
    python finetune_notationed.py
    ```
 
-4. Use `inference.py` for a small manual example, `batch_inference.py` to prepare side-by-side prediction comparisons, and the loss plotting scripts to visualize recorded training logs.
+4. 使用 `inference.py` 做单条推理示例，使用 `batch_inference.py` 整理多模型预测对比；使用 loss 绘图脚本查看训练记录。
 
-The training script's settings are configured in its `if __name__ == "__main__"` block rather than through command-line arguments. Update file paths and model identifiers there before training. Model names supported by the code include mT5, mBART, and M2M100 variants; their language-code and generation settings differ.
+训练脚本的参数写在 `if __name__ == "__main__"` 代码块中，不通过命令行传入。训练前需要在该区域调整数据路径和模型标识。代码支持 mT5、mBART、M2M100 等模型系列；不同模型的语言代码和生成参数可能不同。
 
-## Data and model assets
+## 复现与常见问题
 
-Prepared data, pretrained models, experiment outputs, and checkpoints are not interchangeable with source code. Keep a record of:
+- 尽量使用相对于项目目录的路径，避免依赖某台 Windows 电脑的用户目录或盘符。
+- 翻译任务的源文件和目标文件必须行数相同、顺序对应。
+- 加载检查点时，模型结构、词表/分词器及配置应与保存检查点时一致。
+- 如果 notebook 因旧版 `torchtext` API 无法运行，可创建兼容旧 API 的环境，或更新 notebook 的数据加载/分词代码，并记录更新后的依赖版本。
+- 若 CUDA 报设备不可用或二进制版本不匹配，请安装与机器驱动/运行时兼容的 PyTorch，或先在小规模实验中显式使用 CPU。
+- 多语言生成训练流程要求 JSONL 中每条记录包含字符串类型的 `src` 和 `tgt`。长时间训练前先确认数据路径、拆分名称和模型下载/本地目录。
 
-- Dataset origin, license, language direction, split, and any preprocessing applied.
-- Pretrained model identifier/revision and tokenizer configuration.
-- Python and key library versions, random seed, GPU model, and training arguments.
-- Which checkpoint produced each report, prediction file, and metric.
-
-The multilingual conversation `data/` directory contains prepared JSONL and raw parallel text, while `models/`, `fine_tune_checkpoints/`, and `cache/` contain model assets, run state, and cache data. The machine-translation and sentiment folders also contain checkpoint weights. These assets can be large and may have separate redistribution terms; publish or redistribute them only after checking size, licensing, privacy, and course requirements.
-
-## Reproducibility and troubleshooting
-
-- Use paths relative to the relevant project directory where possible; avoid paths tied to a single Windows user or drive.
-- Ensure paired translation source/target files have the same number and order of lines.
-- Load a checkpoint with the same architecture, vocabulary/tokenizer, and model configuration used to create it.
-- If a notebook fails on an old `torchtext` API, create a legacy-compatible environment or update the notebook's dataset/tokenization code and document the new versions.
-- If CUDA reports an unavailable device or binary mismatch, install the PyTorch build matching the machine's driver/runtime, or explicitly run on CPU for a small smoke run.
-- The generation training pipeline expects input JSONL records with `src` and `tgt` string fields. Verify paths, split names, and model download/local directory before starting a long run.
-
-## Publishing this project on GitHub
-
-Before the first push, review the repository contents and remove or ignore generated and machine-specific artifacts. In particular, check:
-
-- `Multilingual conversation/cache/`, `.data/`, local Hugging Face caches, and `Multilingual conversation/models/`.
-- `Multilingual conversation/fine_tune_checkpoints/`, `Machine translation/checkpoints/`, and large `.pt`/`.pth` weights.
-- `Machine translation/autodl.zip`, generated logs, temporary outputs, and notebook cell outputs containing local paths or personal information.
-- Raw/prepared datasets and reports for licensing, privacy, and course publication restrictions.
-- The multilingual `requirements.txt`: replace the machine snapshot with a small, portable, task-specific requirements file (or separate environment files).
-
-Large checkpoints can be kept outside Git, hosted with an appropriate artifact service, or managed with Git LFS if the repository and file licenses allow it. Add a root `.gitignore` for virtual environments, Python/Jupyter caches, local model/data caches, training outputs, logs, and editor files. Keep only the code, documentation, and data/assets you are permitted to distribute in the public repository.
-
-## License and attribution
-
-No repository-wide license file was found during README preparation. Before publishing publicly, add a license only if you have the right to license all included code and materials, and separately review the terms for course-provided code/data, corpora, pretrained models, and report templates. Cite original datasets, models, and course materials in the relevant project documentation.
 
