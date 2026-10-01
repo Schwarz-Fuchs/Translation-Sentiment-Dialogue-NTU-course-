@@ -1,0 +1,52 @@
+--- 随机抽取的 10 个模型预测结果 (N=10) ---
+
+--- 样本 1 ---
+Source (输入): 5 2 0 [SEP] The Johnson are on their way back.You remember them , don't you ?
+Target (标签): Johnson ? I can't place them .
+Prediction (模型): Yes , I remember them .
+------------------------------
+--- 样本 2 ---
+Source (输入): 5 1 0 [SEP] Have you found a new job yet ?  [SEP]  No , not yet . I ’ m still looking . I ’ Ve been doing some work through a temp-agency though .  [SEP]  What kind of work ?
+Target (标签): I ’ m temping at a pharmaceutic company .
+Prediction (模型): Yes , I ’ Ve been doing a temp-agency , but I don ’ t know .
+------------------------------
+--- 样本 3 ---
+Source (输入): 8 3 0 [SEP] Could you please tell me how I can go job-hunting in the web ?  [SEP]  Generally speaking , job seekers can enter the websites either of job agencies or of some units for job advertisements .  [SEP]  How should I contact them ?
+Target (标签): You can e-mail your application materials for application to the websites of job agencies for enrollment in their database .
+Prediction (模型): Yes , they can contact you through the website .
+------------------------------
+--- 样本 4 ---
+Source (输入): 1 2 0 [SEP] Good afternoon , welcome to IBA . How can I be of service ?  [SEP]  I'd like to talk to somebody about the Group Account Deposit Service .  [SEP]  This refers to the deposit business offered to the level 1 account of group companies .
+Target (标签): What is it used for ? I mean , why bother to get this special account ?
+Prediction (模型): Yes , I'd like to talk to somebody about this service .
+------------------------------
+--- 样本 5 ---
+Source (输入): 1 2 0 [SEP] 早上好。范恩剧院，愿为您效劳。 <Zh>
+Target (标签): 你好。我打算和一个外国女孩看一场中国的传统戏剧。这个周末上演什么剧?
+Prediction (模型): 早上好。你好。我能帮你吗?
+------------------------------
+--- 样本 6 ---
+Source (输入): 5 1 0 [SEP] are you a blogger ?
+Target (标签): sure I am . I've been writing a blog for almost three years .
+Prediction (模型): Yes , I am . I'm a writer .
+------------------------------
+--- 样本 7 ---
+Source (输入): 1 3 0 [SEP] 史蒂文，我们明天去购物好吗？ [SEP] 哼……为什么不后天去购物呢？明天是星期六。我讨厌星期六购物的喧嚣。 [SEP] 但是星期天和星期六是一样的。如果你不介意的话，就没关系的。 [SEP] 嗯。星期天也许会更好。最重要的是工作一周后我可以有一天放松一下。 [SEP] 知道了。那我们后天去吧。 [SEP] 顺便问一下，我们需要去哪些商店？ [SEP] 我想在服装店买些衣服。回去的时候，再去肉店买些鸡肉。 <Zh>
+Target (标签): 我们也去珠宝店买一条水晶项链吧。我想给买给你作为生日礼物。
+Prediction (模型): 好的。我们可以去肉店买鸡肉。
+------------------------------
+--- 样本 8 ---
+Source (输入): 5 1 4 [SEP] How are you wedding plans going ?
+Target (标签): Very well . We started organizing everything early to avoid a last minute rush to get things done . The only thing that isn ’ t ready yet is my wedding dress .
+Prediction (模型): Yes , I'm going to make a few changes .
+------------------------------
+--- 样本 9 ---
+Source (输入): 5 1 0 [SEP] 嘿，苏西。你猜怎么着？我要生孩子了！ [SEP] 真的？太棒了。祝贺你。 [SEP] 谢谢。我太兴奋了。我们已经努力8个月了。 [SEP] 那真是太好了。你怀孕几个月了？ [SEP] 三个月。 [SEP] 你想知道是男孩还是女孩吗？ [SEP] 我想，但鲍勃不想。他喜欢传统的方式，到最后才知道结果。 [SEP] 也许那样才更让人兴奋。 [SEP] 我宁愿提前知道，那样我就能购买所有的婴儿用品。 <Zh>
+Target (标签): 你有很多事情要准备。
+Prediction (模型): 好的。我知道。你想买什么?
+------------------------------
+--- 样本 10 ---
+Source (输入): 2 4 0 [SEP] 先生，我能为您效劳吗？ [SEP] 是的，我想要一本有关法律的书。 [SEP] 您能告诉我这本书的名字和作者吗？ [SEP] 法律的起源。是哈佛大学的菲利克斯教授写的。 [SEP] 对不起。现在没货了。您能下周再来吗？ [SEP] 下周？那太晚了。我有急用。 [SEP] 那么，方便留下您的电话号码吗？这样我们一进货我就可以通知您。 <Zh>
+Target (标签): 不,不管怎样,都谢谢了。
+Prediction (模型): 好的,谢谢。你能给我打电话吗?
+------------------------------

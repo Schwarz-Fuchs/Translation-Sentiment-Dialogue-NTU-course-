@@ -1,0 +1,286 @@
+--- Comparison of 20 Samples Across 5 Models ---
+
+*** Sample 1 (Original Index: 24) ***
+Source (输入):
+1 2 0 [SEP] Hi , who has the remote control ?  [SEP]  I do . Why , do you want me to change the channel ?  [SEP]  Yes , please . I can't stand watching the channel any more .  [SEP]  I think they have pretty good programmes . But I'll change it if you really want .  [SEP]  Put it on Channel 5 , OK ?  [SEP]  Oh , I hate Channel 5 . I'd rather just listen to the radio .  [SEP]  Don't make such a fuss . I'm sure you will like today's programme .
+Target (标签):
+What's on today ?
+--------------------------------------------------
+[MT5BASE Prediction]: I'm sorry . I don't like it .
+[M2M1001_2B Prediction]: What's the program like ?
+[M2M100_418M Prediction]: What's the program ?
+[MBART50 Prediction]: What ?
+[MBART25 Prediction]: forever, what programmes are on today?
+============================================================
+
+*** Sample 2 (Original Index: 449) ***
+Source (输入):
+1 1 0 [SEP] Listen , Karen , I need your help . I don't know anyone here yet .  [SEP]  I'm glad to help you . What's wrong ?  [SEP]  My mother-in-law just went into the hospital in L.A.Hank and I will be flying there tonight .  [SEP]  I'm sorry to hear it . What's wrong with her ?  [SEP]  Doctors aren't sure yet.But the real problem is Suzy . She has a bad cold , and we don't want to take her with us . But we don't know who can stay with her .  [SEP]  You need a babysitter .  [SEP]  Yes , I'd ask Jill , the girl I've had before , but I need someone overnight.Maybe even for two nights .  [SEP]  I could have Suzy stay at my place .  [SEP]  I don't want to do that to you , Karen .  [SEP]  Why not ?  [SEP]  Your own kids would get Suzy's cold . I think it would be better to have a good babysitter here . But I don't know who to ask . I need someone more mature than Jill . It might even be for two or three days .
+Target (标签):
+I know who we can ask . There is a girl I know , Sara Ralston.She is 17 , and she will usually take this kind of job . I know her from my church , and I trust her completely .
+--------------------------------------------------
+[MT5BASE Prediction]: I'm sorry to hear that . I don't know .
+[M2M1001_2B Prediction]: I'm not sure . I know you are a good babysitter , but you know I have to work overtime .
+[M2M100_418M Prediction]: I don't think so.But I need a babysitter .
+[MBART50 Prediction]: I need help finding a good babysitter .
+[MBART25 Prediction]: 
+============================================================
+
+*** Sample 3 (Original Index: 520) ***
+Source (输入):
+1 4 4 [SEP] I am so busy today .
+[SEP]  Can I help you ?
+[SEP]  I ’ m not sure . Perhaps you could do the shopping .
+[SEP]  I ’ ll be glad to help .
+[SEP]  Or maybe make the beds .
+Target (标签):
+All you have to do is ask for help .
+--------------------------------------------------
+[MT5BASE Prediction]: Yes , I ’ m going to make the beds .
+[M2M1001_2B Prediction]: That would be very kind of you .
+[M2M100_418M Prediction]: That ’ s great . I ’ ll be glad to help .
+[MBART50 Prediction]: I ll be glad to help you .
+[MBART25 Prediction]: thanks.
+============================================================
+
+*** Sample 4 (Original Index: 1288) ***
+Source (输入):
+5 1 0 [SEP] It's quiet everywhere in winter .
+Target (标签):
+Yes . I like winter .
+--------------------------------------------------
+[MT5BASE Prediction]: What's the weather ?
+[M2M1001_2B Prediction]: It's quiet everywhere in winter .
+[M2M100_418M Prediction]: It's quiet everywhere in winter .
+[MBART50 Prediction]: It's so cold . I can't sleep .
+[MBART25 Prediction]: forever it's too cold.
+============================================================
+
+*** Sample 5 (Original Index: 1380) ***
+Source (输入):
+5 2 0 [SEP] Mary and Tom are breaking up .  [SEP]  It's unbelievable ! They are only married for one month . Then who is at fault ?  [SEP]  Mary said she couldn't put up with Tom , for he fell in love with another woman .
+Target (标签):
+Do you think they'll become reconciled ?
+--------------------------------------------------
+[MT5BASE Prediction]: That's a shame .
+[M2M1001_2B Prediction]: Why did she say that ?
+[M2M100_418M Prediction]: What's the matter ?
+[MBART50 Prediction]: How could it be ?
+[MBART25 Prediction]: ns, what's the matter?
+============================================================
+
+*** Sample 6 (Original Index: 1427) ***
+Source (输入):
+5 1 0 [SEP] Brian , do you know how to speak English ?
+Target (标签):
+Yes .
+--------------------------------------------------
+[MT5BASE Prediction]: No , I don't know how to speak English .
+[M2M1001_2B Prediction]: Not very well . I'm not very good at speaking English .
+[M2M100_418M Prediction]: Yes , I know how to speak English .
+[MBART50 Prediction]: Yes , I know how to speak English . I have been studying English for three years .
+[MBART25 Prediction]: , I'm not very good at it.
+============================================================
+
+*** Sample 7 (Original Index: 2014) ***
+Source (输入):
+5 1 0 [SEP] hi , Mary ! What do you like to do in your spare time ?
+[SEP]  well , I spend a lot of time watching movies .
+SEP]  what a confidence ! I always watch a lot of movies , too .
+[SEP]  oh really , Frank ? What kind of movies do you like ?
+[SEP]  actually , I watch whichever movie there is , be it a comedy , a sci-fi or a suspense movie . How about you ?
+[SEP]  art films are my favorite , but thrillers are cool , too .
+[SEP]  really impressive . These two genres are totally different .
+[SEP]  sure . I enjoy both of them very much .
+[SEP]  how often do you go to the cinema ?
+[SEP]  once in a while , I suppose , I usually rent movies at Movie Salon .
+[SEP]  movie salon ? where is that ?
+Target (标签):
+it's a movie rental store in my neighborhood . I've got a membership there .
+--------------------------------------------------
+[MT5BASE Prediction]: actually , there is a movie salon , but I don't like it .
+[M2M1001_2B Prediction]: it's just around the corner . There's one on the left .
+[M2M100_418M Prediction]: it's on the first floor of the cinema .
+[MBART50 Prediction]: I'm at the cinema on the corner of 19th street . it's right behind my house .
+[MBART25 Prediction]: ह, it's on the first floor, on the third floor.
+============================================================
+
+*** Sample 8 (Original Index: 2296) ***
+Source (输入):
+6 3 0 [SEP] I have to go up to London for a couple of days next week . Would you like to come ?  [SEP]  That would be nice . How are you getting there ?  [SEP]  Well , I prefer to go on the train , but I suppose you want me to take the car .
+Target (标签):
+Oh , I much prefer to go by car , then we don't need to get to the station with our luggage and ...
+--------------------------------------------------
+[MT5BASE Prediction]: I would like to take the car .
+[M2M1001_2B Prediction]: Oh , I see . Would you like me to go by car , please ?
+[M2M100_418M Prediction]: Well , let's see . It's not too far from here . I'm afraid we don't need to get there .
+[MBART50 Prediction]: Well , I prefer to take the car , but you have to travel by train .
+[MBART25 Prediction]: fore we get there, let's go on the train.
+============================================================
+
+*** Sample 9 (Original Index: 3002) ***
+Source (输入):
+1 3 0 [SEP] Hey , son , are you insured ?  [SEP]  Not yet , but I'm thinking of it . Have you bought one , Dad ?  [SEP]  I took out a life insurance policy and made your mother the beneficiary .
+Target (标签):
+Can you tell me why you want to buy it ?
+--------------------------------------------------
+[MT5BASE Prediction]: I'm sorry , but I don't know why .
+[M2M1001_2B Prediction]: Oh , my God ! How about this one ? It's my first life insurance policy .
+[M2M100_418M Prediction]: Can you tell me what you want me to do ?
+[MBART50 Prediction]: Well , why not buy a life insurance policy ?
+[MBART25 Prediction]: forevery, I'm thinking of buying one, too.
+============================================================
+
+*** Sample 10 (Original Index: 3139) ***
+Source (输入):
+1 1 5 [SEP] 你好！ [SEP] 喂，是斯特凡吗？ [SEP] 对不起，恐怕你拨错号码了。这里没有斯特凡这个人。 [SEP] 真的吗？你确定？我以前打过电话，有这个人的。 [SEP] 对。我肯定。你打错电话了。我用这个号码已经20多年了。 [SEP] 不可能。我清楚地记得这个电话号码。你的电话号码是1199886吗？ [SEP] 不，不是。是1199866。看来你拨错电话了。 [SEP] 哦，对不起，打扰你了。我真的很抱歉。 [SEP] 没关系。每个人都会这样。 <Zh>
+Target (标签):
+再次抱歉打扰你。
+--------------------------------------------------
+[MT5BASE Prediction]: 哦,对不起,我真的抱歉。
+[M2M1001_2B Prediction]: 我真的很抱歉。我打错电话是199866.
+[M2M100_418M Prediction]: 对不起,斯特凡打扰了我。
+[MBART50 Prediction]: 很抱歉打扰你了。
+[MBART25 Prediction]: 我真的很抱歉。
+============================================================
+
+*** Sample 11 (Original Index: 3288) ***
+Source (输入):
+1 1 0 [SEP] 我要了。多少钱？ <Zh>
+Target (标签):
+60美元。
+--------------------------------------------------
+[MT5BASE Prediction]: 你需要多少钱?
+[M2M1001_2B Prediction]: 请稍等,先生。我们的价格是12美元。
+[M2M100_418M Prediction]: 嗯,这是您的收据。
+[MBART50 Prediction]: 每箱120元。
+[MBART25 Prediction]: 每打二十美元。
+============================================================
+
+*** Sample 12 (Original Index: 3539) ***
+Source (输入):
+1 3 4 [SEP] 傻姑娘，让我花这么多钱，现在我必须从自动取款机上取款... <Zh>
+Target (标签):
+你好，欢迎使用联邦银行。请把卡插入插卡口。
+--------------------------------------------------
+[MT5BASE Prediction]: 是的,你知道吗?你能帮我吗?
+[M2M1001_2B Prediction]: 好主意!请出示您的身份证好吗?
+[M2M100_418M Prediction]: 好主意!你想把你的账单寄到银行吗?
+[MBART50 Prediction]: 那是个好主意。你为什么不直接打电话给银行呢?
+[MBART25 Prediction]: 嗯,我明白了。你为什么不打电话给我,我给你打个电话。
+============================================================
+
+*** Sample 13 (Original Index: 4050) ***
+Source (输入):
+3 1 0 [SEP] 你和理查德刚才在说什么？看上去很激烈。 [SEP] 是的，理查德对我说了一些我不喜欢的话。 [SEP] 哦，天呐。我知道他有多粗线条。他说了什么？ [SEP] 他问我花了多长时间学英语。 [SEP] 但是，你不是在加利福尼亚出生长大的吗！ [SEP] 是的，但这种事有时也会发生。不论我的家人在美国生活了多少代，在他们眼里我们永远是外国人。 [SEP] 真是个种族主义者！你怎么能忍受和他一起工作？ [SEP] 其实，理查德不是个坏人。他这么说是出于无知，而不是恶意。 [SEP] 那么，你是怎么回答的？ <Zh>
+Target (标签):
+我告诉他28年。他知道我已经28岁了，因为我上周刚过生日。他困惑了一会儿，然后明白了。
+--------------------------------------------------
+[MT5BASE Prediction]: 他告诉我,他对我的工作很感兴趣。我知道他是个好人。
+[M2M1001_2B Prediction]: 嗯,我告诉他我要和他谈谈,但他不介意。
+[M2M100_418M Prediction]: 理查德说他是个无知的人,但他说他不是一个坏人。
+[MBART50 Prediction]: 嗯,我告诉他我不是种族主义者,我只是一个朋友而已。
+[MBART25 Prediction]: 理查德说,我只是一个美国人。
+============================================================
+
+*** Sample 14 (Original Index: 4173) ***
+Source (输入):
+4 1 0 [SEP] 哦，天哪。我再也受不了了
+[SEP] 怎么了，亲爱的？放轻松
+[SEP] 我厌倦了做无聊的工作。我每天都重复数数。太难受了
+[SEP] 我也是。但我想我们可以做别的。
+[SEP] 你知道，支撑我工作的是专业知识而不是热情。有时候我真不知道工作是为了什么 <Zh>
+Target (标签):
+但你做得很好。你在我们公司表现的最棒。
+--------------------------------------------------
+[MT5BASE Prediction]: 是的,你知道,我喜欢工作。我喜欢学习。
+[M2M1001_2B Prediction]: 嗯,你知道的,你必须有耐心。你必须学会如何与人打交道。
+[M2M100_418M Prediction]: 是的,你知道的。你知道,工作是为了工作而不是为了工作。
+[MBART50 Prediction]: 是的,工作是为了什么?你总是那么消极。
+[MBART25 Prediction]: 工作是为了什么
+============================================================
+
+*** Sample 15 (Original Index: 4379) ***
+Source (输入):
+5 2 0 [SEP] 我们还有另一个传统节日——端午节。 [SEP] 什么时候？ [SEP] 农历五月初五。 <Zh>
+Target (标签):
+你能告诉我这两个节日的起源吗？
+--------------------------------------------------
+[MT5BASE Prediction]: 是的,我们每年都去北京。
+[M2M1001_2B Prediction]: 那是什么?
+[M2M100_418M Prediction]: 农历是哪一天?
+[MBART50 Prediction]: 还有其他传统节日吗?
+[MBART25 Prediction]: 什么是龙舟比赛?
+============================================================
+
+*** Sample 16 (Original Index: 4474) ***
+Source (输入):
+5 1 0 [SEP] 莎拉，你今天做了什么？
+[SEP] 我去购物了。
+[SEP] 你买了什么吗？
+[SEP] 是的，我买了一些东西。
+[SEP] 买了什么？
+[SEP] 这件外套。你喜欢吗？
+[SEP] 我很喜欢，非常漂亮。你在哪里买的？ <Zh>
+Target (标签):
+在第五大街的购物中心。
+--------------------------------------------------
+[MT5BASE Prediction]: 我买的。
+[M2M1001_2B Prediction]: 我在百货公司买的。
+[M2M100_418M Prediction]: 我去购物中心买的。
+[MBART50 Prediction]: 我在宜家买的。
+[MBART25 Prediction]: 我去宜家买的。
+============================================================
+
+*** Sample 17 (Original Index: 4569) ***
+Source (输入):
+5 1 4 [SEP] 蒂姆的笑容很有趣。 <Zh>
+Target (标签):
+是的，害羞，温柔，但又非常强大。
+--------------------------------------------------
+[MT5BASE Prediction]: 是的,他很高兴见到他。
+[M2M1001_2B Prediction]: 他笑得很开心。
+[M2M100_418M Prediction]: 是的,他笑得很开心。
+[MBART50 Prediction]: 是的,他总是笑容可笑。
+[MBART25 Prediction]: 不客气。
+============================================================
+
+*** Sample 18 (Original Index: 5190) ***
+Source (输入):
+5 1 0 [SEP] 嘿，你听说杰西卡这个周末有聚会了吗？ [SEP] 是的，但我还在等我的邀请。 [SEP] 哦，真的吗？她今天早些时候把我的邀请给了我。 <Zh>
+Target (标签):
+好吧，她今天晚些时候可能会把我的邀请给我。
+--------------------------------------------------
+[MT5BASE Prediction]: 哦,是的,我知道。她很高兴见到你。
+[M2M1001_2B Prediction]: 是的,我知道,但我还是很抱歉。
+[M2M100_418M Prediction]: 是的,她今天早上给了我邀请。
+[MBART50 Prediction]: 哦,是的,她邀请了一位来自中国的企业家。
+[MBART25 Prediction]: 是的,我记得她给我的电话号码。
+============================================================
+
+*** Sample 19 (Original Index: 5257) ***
+Source (输入):
+6 3 0 [SEP] 先生，请问我什么时候登机？ [SEP] 对不起，航班晚点了，请到候机室等候通知。 [SEP] 我不想错过我的航班。 <Zh>
+Target (标签):
+别担心。我们会随时通知你的。
+--------------------------------------------------
+[MT5BASE Prediction]: 好的,请稍等。
+[M2M1001_2B Prediction]: 请出示登机牌好吗?
+[M2M100_418M Prediction]: 请问您的航班号是多少?
+[MBART50 Prediction]: 好的,请出示您的护照好吗?
+[MBART25 Prediction]: 您有空乘票吗?
+============================================================
+
+*** Sample 20 (Original Index: 6034) ***
+Source (输入):
+1 3 0 [SEP] 嘿，儿子，你买保险了吗？ [SEP] 还没有，但我正在考虑。爸爸，你买了吗？ [SEP] 我买了一份人寿保险，你妈妈是受益人。 <Zh>
+Target (标签):
+能告诉我你为什么要买吗？
+--------------------------------------------------
+[MT5BASE Prediction]: 是的,我妈妈是受益人。
+[M2M1001_2B Prediction]: 好吧,你能告诉我一些关于人寿保险的事吗?
+[M2M100_418M Prediction]: 哦,亲爱的,你能告诉我你的保险费吗?
+[MBART50 Prediction]: 是的,你妈妈是保单受益人吗?
+[MBART25 Prediction]: D-A-V-I-D-E-R-E-Y。
+============================================================
+

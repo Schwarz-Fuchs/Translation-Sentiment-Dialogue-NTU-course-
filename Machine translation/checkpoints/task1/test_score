@@ -1,0 +1,8 @@
+=== Evaluation score - Rouge score ===
+Rouge1 fmeasure:	 0.620948851108551
+Rouge1 precision:	 0.5874614119529724
+Rouge1 recall:  	 0.6673239469528198
+Rouge2 fmeasure:	 0.4391239881515503
+Rouge2 precision:	 0.4075421690940857
+Rouge2 recall:  	 0.48498106002807617
+=====================================
